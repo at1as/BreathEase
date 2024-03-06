@@ -1,0 +1,215 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to right, rgba(18, 194, 233, 0.9), rgba(196, 113, 237, 0.9), rgba(246, 79, 89, 0.9));
+    color: white;
+}
+#startButton {
+    position: absolute;
+    top: 50%;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 100px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 20px;
+    border: 1px solid white;
+    text-shadow: 2px 2px 4px #000000;
+}
+.breathingInstructions {
+    text-align: center;
+    font-size: 48px;
+    color: white;
+    font-weight: bold;
+    margin-top: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: top;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    text-shadow: 1px 1px 2px #000000;
+}
+.breathingContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    color:white;
+}
+.explanation {
+    text-align: center;
+    font-size: 14px;
+    font-style:italic;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin-top: 20px;
+}
+.cycleCount {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    color: white;
+    font-family: Arial, sans-serif;
+    font-weight: 500;
+    margin-right:25px;
+}
+.pauseButton {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #d9534f;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: 'Roboto', sans-serif;
+    border: 1px solid white;
+    display: none;
+}
+
+.pauseButton.green {
+    background-color: #5cb85c;
+    border: 1px solid white;
+}
+.pauseButton:hover {
+    opacity: 0.8;
+}
+.pauseButton:active {
+    opacity: 1;
+}
+.pauseButton:hover {
+    opacity: 0.8;
+}
+.pauseButton:active {
+    opacity: 1;
+}
+.red {
+    background-color: red;
+}
+.green {
+    background-color: green;
+}
+#completedCycles {
+    position: absolute;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:30px;
+    text-shadow: 2px 2px 4px #000000;
+}
+#timer {
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:50px;
+    margin-right:10px;
+    margin-bottom:10px;
+}
+
+@keyframes breatheIn {
+    0% {
+        transform: scale(1);
+        background-color: #80d3ff;
+    }
+    100% {
+        transform: scale(4.0);
+        background-color: #3b7cb9;
+    }
+}
+
+@keyframes holdBreath {
+    0% {
+        transform: scale(4.0);
+        background-color: #959595;
+    }
+    100% {
+        transform: scale(4.0);
+        background-color: #959595;
+    }
+}
+
+@keyframes breatheOut {
+    0% {
+        transform: scale(4.0);
+        background-color: #f89100;
+    }
+    100% {
+        transform: scale(1);
+        background-color: #ebc48d;
+    }
+}
+
+@keyframes textBreatheIn {
+    0% {
+        transform: scale(1);
+        color: #80d3ff;
+    }
+    100% {
+        transform: scale(1.1);
+        color: #3b7cb9;
+    }
+}
+
+@keyframes textBreatheOut {
+    0% {
+        transform: scale(1);
+        color: #80d3ff;
+    }
+    100% {
+        transform: scale(1.1);
+        color: #3b7cb9;
+    }
+}
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+.shake {
+    animation: shake 0.5s;
+    animation-iteration-count: infinite;
+}
+
+#startButton.breatheIn {
+    animation: breatheIn 10s forwards;
+}
+#startButton.holdBreath {
+    animation: holdBreath 5s forwards;
+}
+#startButton.breatheOut {
+    animation: breatheOut 10s forwards;
+}
+
+.breathingInstructions.breatheIn {
+    animation: textBreatheIn 10s forwards;
+    transform-origin: center;
+}
+
+.breathingInstructions.breatheOut {
+    animation: textBreatheOut 10s forwards;
+    transform-origin: center;
+}
+
+.breathingInstructions {
+    text-align: center;
+    font-size: 24px;
+}

@@ -1,0 +1,41 @@
+
+
+<!--
+    Create a round button with the text "Start"
+    Once clicked the button will state "Breathe in" for 10 seconds while the button keeps getting larger
+    After 10 seconds the button will state "Hold" for 5 seconds
+    After 5 seconds the button will state "Breathe out" for 10 seconds while the button keeps getting smaller
+-->
+<!DOCTYPE html>
+    <head>
+        <title>Breathing App</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <div class="breathingContainer">
+            <p class="explanation">
+                This app will lead you through a simple <span style="font-weight:700">breathing exercise</span>.
+                Press the button to begin and follow the instructions.
+                Breathe in as the button grows, and breathe out as it shrinks.
+            </p>
+
+            <button id="startButton" class="startButton" onclick="startBreathing()">
+                Start
+            </button>
+            <p class="breathingInstructions">
+                Press Start to Begin!
+            </p>
+        </div>
+        <p class="cycleCount">
+            Cycles completed: <span>0</span>
+        </p>
+        <button class="pauseButton">
+            Stop 🛑
+        </button>
+        <p id="completedCycles"></p>
+        <div id="timer" style="position: fixed; bottom: 10px; right: 10px;"></div>
+
+        <script src="script.js"></script>
+    </body>
+
+</html>
